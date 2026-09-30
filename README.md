@@ -51,7 +51,8 @@ flowchart TD
         MQ --> Sparse["Sparse Retrieval (BM25)"]:::process
         Chroma --> Dense
         BM25 --> Sparse
-        Dense & Sparse --> RRF["Reciprocal Rank Fusion (RRF)"]:::rerank
+        Dense --> RRF["Reciprocal Rank Fusion (RRF)"]:::rerank
+        Sparse --> RRF
         RRF --> Reranker["Gemini LLM Cross-Encoder Reranker"]:::rerank
     end
 
@@ -59,7 +60,7 @@ flowchart TD
         Reranker --> Context["Top-K Deduplicated Context Assembly"]:::process
         Query --> Generator["Gemini 3.6 Flash Generator"]:::process
         Context --> Generator
-        Generator --> Answer["Clean Answer + Footnote Badges [1]"]:::output
+        Generator --> Answer["Clean Answer + Footnote Citations (1, 2)"]:::output
     end
 ```
 
