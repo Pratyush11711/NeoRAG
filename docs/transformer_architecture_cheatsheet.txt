@@ -1,0 +1,29 @@
+TRANSFORMER ARCHITECTURE CHEATSHEET & SPECIFICATIONS
+
+1. Core Components
+The Transformer model relies exclusively on self-attention mechanisms without recurrence or convolution.
+The architecture comprises two main stacks:
+- The Encoder Stack: Consists of N = 6 identical layers. Each layer has two sub-layers:
+  (a) Multi-Head Self-Attention mechanism
+  (b) Position-wise fully connected Feed-Forward Network
+  Residual connections are employed around each of the two sub-layers, followed by layer normalization.
+
+- The Decoder Stack: Also consists of N = 6 identical layers. In addition to the two sub-layers in each encoder layer, the decoder inserts a third sub-layer:
+  (c) Masked Multi-Head Attention over the encoder stack output to prevent positions from attending to subsequent positions.
+
+2. Attention Equations
+Scaled Dot-Product Attention is computed as:
+Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V
+Where:
+- Q represents the Query matrix
+- K represents the Key matrix
+- V represents the Value matrix
+- d_k is the dimension of the keys (typically 64)
+
+Multi-Head Attention allows the model to jointly attend to information from different representation subspaces:
+MultiHead(Q, K, V) = Concat(head_1, ..., head_h) * W^O
+where head_i = Attention(Q * W_i^Q, K * W_i^K, V * W_i^V)
+
+3. Key Training Results
+- English-to-German Translation (WMT 2014): Transformer (big) established a new state-of-the-art BLEU score of 28.4.
+- English-to-French Translation (WMT 2014): Transformer (big) achieved a BLEU score of 41.8 after training for 3.5 days on 8 GPUs.

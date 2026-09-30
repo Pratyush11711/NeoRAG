@@ -1,0 +1,105 @@
+# ==============================================================================
+# NeoRAG .gitignore
+# ==============================================================================
+
+# Secrets and Environment Variables (CRITICAL: NEVER COMMIT)
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Python Bytecode and Compilation Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Testing, Pytest, and Coverage Artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Node.js and Frontend Build Artifacts
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+*.local
+
+# Ephemeral Runtime Data & Databases
+# User uploads, generated ChromaDB embeddings, and SQLite metadata are ephemeral runtime artifacts
+data/chroma/
+backend/data/chroma/
+data/metadata.db
+backend/data/metadata.db
+data/uploads/*
+!data/uploads/.gitkeep
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+backend/data/processed/*
+!backend/data/processed/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and Scratch Files
+logs/
+*.log
+*.tmp
+*.bak
+scratch/
+
+# IDE, OS, and Editor Metadata
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
