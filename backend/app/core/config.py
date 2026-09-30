@@ -15,7 +15,7 @@ class Settings(BaseSettings):
 
     # API Keys & Models
     GOOGLE_API_KEY: str = ""
-    GEMINI_CHAT_MODEL: str = "gemini-3.5-flash-lite"
+    GEMINI_CHAT_MODEL: str = "gemini-3.6-flash"
     GEMINI_EMBEDDING_MODEL: str = "models/gemini-embedding-001"
     
     # Storage & Persistence Paths
