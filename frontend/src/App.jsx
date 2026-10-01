@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MessageSquare, Sliders, FolderOpen, History, Sparkles, ExternalLink, Zap, ShieldCheck 
+import {
+  MessageSquare, Sliders, FolderOpen, History, Sparkles, ExternalLink, Zap, ShieldCheck
 } from 'lucide-react';
 import { NeoButton, NeoBadge } from './components/neobrutalism';
 import { ChatView } from './views/ChatView';

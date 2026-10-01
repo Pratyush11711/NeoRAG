@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  FileText, Download, ExternalLink, X, Eye, Layers, Table, Image as ImageIcon, CheckCircle, RefreshCw, AlertCircle 
+import {
+  FileText, Download, ExternalLink, X, Eye, Layers, Table, Image as ImageIcon, CheckCircle, RefreshCw, AlertCircle
 } from 'lucide-react';
 import { NeoButton, NeoBadge } from '../neobrutalism';
-import { 
-  getDocumentViewUrl, 
-  getDocumentDownloadUrl, 
-  getReferenceDocumentUrl, 
-  fetchDocumentDetails, 
-  fetchDocumentRawContent 
+import {
+  getDocumentViewUrl,
+  getDocumentDownloadUrl,
+  getReferenceDocumentUrl,
+  fetchDocumentDetails,
+  fetchDocumentRawContent
 } from '../../services/api';
 
 export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceFilename }) => {
@@ -22,7 +22,7 @@ export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceF
   const isPdf = filename.toLowerCase().endsWith('.pdf');
   const isReference = !doc?.document_id && !!referenceFilename;
 
-  const viewUrl = doc?.document_id 
+  const viewUrl = doc?.document_id
     ? getDocumentViewUrl(doc.document_id)
     : getReferenceDocumentUrl(referenceFilename || filename, false);
 
@@ -70,11 +70,11 @@ export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceF
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative flex flex-col w-full max-w-5xl h-[90vh] bg-white border-4 border-black rounded-[16px] shadow-[8px_8px_0px_0px_#000] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -94,7 +94,7 @@ export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceF
                 </NeoBadge>
               </div>
               <p className="text-[11px] font-mono text-black/80 font-bold truncate">
-                {isReference 
+                {isReference
                   ? 'Official Reference Paper • Attention Is All You Need (Vaswani et al.)'
                   : doc?.document_id ? `Document ID: ${doc.document_id}` : 'Document Viewer'
                 }
@@ -207,7 +207,7 @@ export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceF
 
               <div className="grid grid-cols-1 gap-4">
                 {details.chunks.map((chunk, idx) => (
-                  <div 
+                  <div
                     key={chunk.chunk_id || idx}
                     className="p-4 bg-white border-2 border-black rounded-xl shadow-[3px_3px_0px_0px_#000] space-y-3"
                   >
@@ -239,9 +239,9 @@ export const DocumentViewerModal = ({ isOpen, onClose, document: doc, referenceF
                           <span>Extracted HTML Table ({chunk.tables.length})</span>
                         </div>
                         {chunk.tables.map((t, tIdx) => (
-                          <div 
-                            key={tIdx} 
-                            dangerouslySetInnerHTML={{ __html: t.html }} 
+                          <div
+                            key={tIdx}
+                            dangerouslySetInnerHTML={{ __html: t.html }}
                             className="overflow-x-auto text-[11px] font-sans border border-black/30 rounded p-1 bg-white"
                           />
                         ))}

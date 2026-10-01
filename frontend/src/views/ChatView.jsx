@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
+import {
   Send, Sparkles, BookOpen, Layers, Clock, Cpu, CheckCircle, AlertCircle, FileSearch, ArrowRight, Download, Eye, FileText, Filter, Check
 } from 'lucide-react';
-import { 
-  NeoButton, NeoCard, NeoInput, NeoBadge, NeoSelect, NeoAlert 
+import {
+  NeoButton, NeoCard, NeoInput, NeoBadge, NeoSelect, NeoAlert
 } from '../components/neobrutalism';
 import { PipelineVisualizer } from '../components/rag/PipelineVisualizer';
 import { RRFBreakdownTable } from '../components/rag/RRFBreakdownTable';
@@ -11,11 +11,11 @@ import { MultimodalChunkCard } from '../components/rag/MultimodalChunkCard';
 import { DocumentViewerModal } from '../components/rag/DocumentViewerModal';
 import { QuickDocumentUploader } from '../components/rag/QuickDocumentUploader';
 import { CleanAnswerRenderer } from '../components/rag/CleanAnswerRenderer';
-import { 
-  executeChat, 
-  loadSampleDocuments, 
-  getReferenceDocumentUrl, 
-  getDocumentDownloadUrl 
+import {
+  executeChat,
+  loadSampleDocuments,
+  getReferenceDocumentUrl,
+  getDocumentDownloadUrl
 } from '../services/api';
 
 const ATTENTION_PAPER_FILENAME = 'attention-is-all-you-need.pdf';
@@ -216,8 +216,8 @@ export const ChatView = ({ onSelectDocument }) => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={
-                  activeDocument 
-                    ? `Ask anything about ${activeDocument.filename}...` 
+                  activeDocument
+                    ? `Ask anything about ${activeDocument.filename}...`
                     : "Ask anything about the ingested documents or Attention paper..."
                 }
                 required
@@ -381,8 +381,8 @@ export const ChatView = ({ onSelectDocument }) => {
 
                       <a
                         href={
-                          src.document_id 
-                            ? getDocumentDownloadUrl(src.document_id) 
+                          src.document_id
+                            ? getDocumentDownloadUrl(src.document_id)
                             : getReferenceDocumentUrl(src.document, true)
                         }
                         download={src.document}

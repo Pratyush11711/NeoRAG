@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Cpu, Search, Split, Layers, Filter, Bot, ArrowRight, Clock, Hash, ChevronRight 
+import {
+  Cpu, Search, Split, Layers, Filter, Bot, ArrowRight, Clock, Hash, ChevronRight
 } from 'lucide-react';
 import { NeoBadge } from '../neobrutalism';
 

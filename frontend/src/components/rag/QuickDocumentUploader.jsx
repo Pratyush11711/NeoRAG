@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
-import { 
-  Upload, FileText, CheckCircle, Clock, Sparkles, X, Eye, Download, ArrowRight, AlertCircle 
+import {
+  Upload, FileText, CheckCircle, Clock, Sparkles, X, Eye, Download, ArrowRight, AlertCircle
 } from 'lucide-react';
 import { NeoButton, NeoBadge, NeoAlert } from '../neobrutalism';
 import { uploadAndIngestDocument, getDocumentDownloadUrl } from '../../services/api';
 
-export const QuickDocumentUploader = ({ 
-  onDocumentIngested, 
-  activeDocument, 
+export const QuickDocumentUploader = ({
+  onDocumentIngested,
+  activeDocument,
   onClearActiveDocument,
-  onPreviewDocument 
+  onPreviewDocument
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [status, setStatus] = useState(null); // { stage, percent, message }
@@ -84,8 +84,8 @@ export const QuickDocumentUploader = ({
                 </span>
               </div>
               <p className="text-[11px] font-mono text-neutral-600 font-bold truncate">
-                {activeDocument.chunk_count 
-                  ? `${activeDocument.chunk_count} chunks indexed • Questions will target this file` 
+                {activeDocument.chunk_count
+                  ? `${activeDocument.chunk_count} chunks indexed • Questions will target this file`
                   : 'Ready for question answering & retrieval'
                 }
               </p>
@@ -136,8 +136,8 @@ export const QuickDocumentUploader = ({
         onDragLeave={handleDragLeave}
         className={`
           relative border-2 border-dashed rounded-xl p-4 sm:p-5 transition-all text-center
-          ${isDragging 
-            ? 'border-black bg-[#ffd731]/20 scale-[1.01]' 
+          ${isDragging
+            ? 'border-black bg-[#ffd731]/20 scale-[1.01]'
             : 'border-black bg-white hover:bg-neutral-50 shadow-[2px_2px_0px_0px_#000]'
           }
         `}
@@ -167,7 +167,7 @@ export const QuickDocumentUploader = ({
 
             {/* Neo-brutalist Progress Bar */}
             <div className="w-full max-w-md mx-auto h-4 bg-white border-2 border-black rounded-full overflow-hidden shadow-[2px_2px_0px_0px_#000]">
-              <div 
+              <div
                 className="h-full bg-[#55db9c] border-r-2 border-black transition-all duration-300"
                 style={{ width: `${status.percent}%` }}
               />

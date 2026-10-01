@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { 
+import {
   Upload, FileText, Trash2, RefreshCw, Table, Image as ImageIcon, CheckCircle, Clock, AlertTriangle, Layers, Eye, Sparkles, Download, BookOpen, ExternalLink
 } from 'lucide-react';
-import { 
-  NeoButton, NeoCard, NeoBadge, NeoAlert 
+import {
+  NeoButton, NeoCard, NeoBadge, NeoAlert
 } from '../components/neobrutalism';
 import { DocumentViewerModal } from '../components/rag/DocumentViewerModal';
-import { 
-  fetchDocuments, 
-  uploadDocument, 
-  ingestDocument, 
-  deleteDocument, 
+import {
+  fetchDocuments,
+  uploadDocument,
+  ingestDocument,
+  deleteDocument,
   loadSampleDocuments,
   getDocumentDownloadUrl,
   getReferenceDocumentUrl

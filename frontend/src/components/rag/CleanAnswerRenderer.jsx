@@ -107,11 +107,11 @@ function normalizeCitations(text = '', sources = []) {
  * Transforms raw RAG LLM responses into high-clarity, beautiful typography
  * with interactive, compact footnote citations and clean equation blocks.
  */
-export const CleanAnswerRenderer = ({ 
-  text = '', 
-  sources = [], 
-  highlightedSource = null, 
-  onSourceClick = () => {} 
+export const CleanAnswerRenderer = ({
+  text = '',
+  sources = [],
+  highlightedSource = null,
+  onSourceClick = () => { }
 }) => {
   const processedHtml = useMemo(() => {
     if (!text) return '';
@@ -162,8 +162,8 @@ export const CleanAnswerRenderer = ({
                 inline-flex items-center justify-center font-mono text-[11px] font-black
                 h-[18px] min-w-[20px] px-1 mx-0.5 -translate-y-0.5 rounded border border-black cursor-pointer
                 transition-all duration-150 select-none
-                ${isHighlighted 
-                  ? 'bg-[#ffd731] scale-110 shadow-[2px_2px_0px_0px_#000] ring-1 ring-black' 
+                ${isHighlighted
+                  ? 'bg-[#ffd731] scale-110 shadow-[2px_2px_0px_0px_#000] ring-1 ring-black'
                   : 'bg-[#4da2ff] hover:bg-[#ffd731] text-black shadow-[1px_1px_0px_0px_#000] hover:translate-x-[0.5px] hover:translate-y-[0.5px]'}
               `}
               title={`[#${rank}] ${docName}${pageStr} — Click to inspect source`}

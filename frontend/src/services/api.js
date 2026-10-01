@@ -1,4 +1,4 @@
-const API_BASE = ''; // Uses Vite proxy in development
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 function getHeaders(custom = {}) {
   const headers = { ...custom };
@@ -138,7 +138,7 @@ export async function fetchDocumentRawContent(documentId) {
   return res.json();
 }
 
-export async function uploadAndIngestDocument(file, onProgress = () => {}) {
+export async function uploadAndIngestDocument(file, onProgress = () => { }) {
   // Step 1: Upload
   onProgress({ stage: 'uploading', percent: 25, message: `Uploading ${file.name}...` });
   const uploadRes = await uploadDocument(file);

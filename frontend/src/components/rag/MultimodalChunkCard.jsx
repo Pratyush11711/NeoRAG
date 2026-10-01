@@ -122,7 +122,7 @@ export const MultimodalChunkCard = ({ chunk, rank, score, isCitationTarget = fal
                   </span>
                   <NeoBadge variant="pink" size="sm">HTML Table</NeoBadge>
                 </div>
-                <div 
+                <div
                   className="overflow-x-auto text-xs [&_table]:w-full [&_table]:border-collapse [&_th]:border-2 [&_th]:border-black [&_th]:p-1.5 [&_th]:bg-[#ffd731] [&_td]:border [&_td]:border-black [&_td]:p-1.5"
                   dangerouslySetInnerHTML={{ __html: table.html }}
                 />
@@ -135,8 +135,8 @@ export const MultimodalChunkCard = ({ chunk, rank, score, isCitationTarget = fal
         {activeTab === 'images' && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {chunk.images.map((img, iIdx) => {
-              const src = img.base64?.startsWith('data:') 
-                ? img.base64 
+              const src = img.base64?.startsWith('data:')
+                ? img.base64
                 : `data:${img.mime_type || 'image/jpeg'};base64,${img.base64}`;
 
               return (

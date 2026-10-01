@@ -73,7 +73,8 @@
   --color-voltage-violet: #5c4ade;
 
   /* Surfaces & Canvas */
-  --bg-color: #dceeff; /* Sky Wash pastel paper canvas */
+  --bg-color: #dceeff;
+  /* Sky Wash pastel paper canvas */
   --bg-grid: rgba(0, 0, 0, 0.05);
   --color-border: #000000;
   --color-dark: #000000;
@@ -115,7 +116,7 @@
 body {
   font-family: var(--font-heading);
   background-color: var(--bg-color);
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
   background-size: 32px 32px;
@@ -126,7 +127,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
 }
 
@@ -135,14 +137,17 @@ code, pre {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #dceeff;
   border-left: 2px solid #000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #4da2ff;
   border: 2px solid #000;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #ffd731;
 }
@@ -158,8 +163,13 @@ code, pre {
 
 /* Slush Marquee Animation */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {

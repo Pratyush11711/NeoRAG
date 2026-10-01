@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
-  Search, Sliders, Layers, Sparkles, Filter, Clock, BookOpen, Eye, Download, Check, FileText 
+import {
+  Search, Sliders, Layers, Sparkles, Filter, Clock, BookOpen, Eye, Download, Check, FileText
 } from 'lucide-react';
-import { 
-  NeoButton, NeoCard, NeoInput, NeoSelect, NeoSlider, NeoBadge, NeoAlert 
+import {
+  NeoButton, NeoCard, NeoInput, NeoSelect, NeoSlider, NeoBadge, NeoAlert
 } from '../components/neobrutalism';
 import { PipelineVisualizer } from '../components/rag/PipelineVisualizer';
 import { RRFBreakdownTable } from '../components/rag/RRFBreakdownTable';

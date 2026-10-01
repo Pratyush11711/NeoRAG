@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { History, Eye, Clock, RefreshCw, Cpu, Layers } from 'lucide-react';
-import { 
-  NeoButton, NeoCard, NeoTable, NeoBadge, NeoModal, NeoAlert 
+import {
+  NeoButton, NeoCard, NeoTable, NeoBadge, NeoModal, NeoAlert
 } from '../components/neobrutalism';
 import { PipelineVisualizer } from '../components/rag/PipelineVisualizer';
 import { fetchRuns, fetchRunDetail } from '../services/api';
